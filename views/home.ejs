@@ -22,6 +22,7 @@
         <ul>
             <% todo.forEach(todos => { %>
             <li class="list">
+                <input class="checkbox" type="checkbox">
                 <p><%= todos.todo %></p>
                 <Button onClick="location.href='/delete/todo/<%= todos._id %>'">X</Button>
             </li>
