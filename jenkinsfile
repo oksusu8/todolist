@@ -1,0 +1,21 @@
+node {
+
+    def app
+    stage('Clone repository') {
+        git branch: 'main',
+        url: 'https://github.com/oksusu8/todolist.git'
+    }
+
+    stage('Build image') {
+        app = docker.build("oksusu8/docker-example")
+    }
+    
+
+    stage('Push image') {
+        docker.withRegistry('https://hub.docker.com/repository/docker/oksusu8/docker-example#', 'dockerhub') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+        }
+    }
+
+}
