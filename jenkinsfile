@@ -7,7 +7,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("oksusu8/docker-example")
+        app = docker.build("hoo903/todolist")
     }
     
 
