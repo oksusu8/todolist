@@ -7,7 +7,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("hoo903/todolist")
+        app = docker.build("hoo903/todolist-2")
     }
     
 
