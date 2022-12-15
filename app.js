@@ -7,7 +7,9 @@ const app = express();
 mongoose.connect("mongodb://mongo:27017/docker-node-mongo", {
   useNewUrlParser:true,
   useUnifiedTopology: true,
-});
+})
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log(err));
 
 // 미들웨어 설정
 app.use(express.urlencoded({extended: true}));
