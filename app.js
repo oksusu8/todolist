@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // 몽고DB 연결
-mongoose.connect("mongodb://127.0.0.1/todo_express", {
+mongoose.connect("mongodb://mongo:27017/docker-node-mongo", {
   useNewUrlParser:true,
   useUnifiedTopology: true,
 });
