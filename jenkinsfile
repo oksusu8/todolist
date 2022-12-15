@@ -7,12 +7,12 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("oksusu8/docker-example")
+        app = docker.build("hoo903/todolist")
     }
     
 
     stage('Push image') {
-        docker.withRegistry('https://hub.docker.com/repository/docker/oksusu8/docker-example#', 'dockerhub') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
