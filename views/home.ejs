@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do-List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header>TO DO LIST</header>
+      
+        <!--할 일 추가 field-->
+        <div id="add_work">
+            <form action="/add/todo" method="post">
+                <input type="text" name="todo" id="input_task" placeholder="Add a new task" autofocus>
+                <button type="submit" id="add_btn">+</button>
+            </form>
+        </div>
+        
+        <div id="date">
+            <p></p>
+        </div>
+
+        <ul>
+            <% todo.forEach(todos => { %>
+            <li class="list">
+                <input class="checkbox" type="checkbox">
+                <p><%= todos.todo %></p>
+                <Button onClick="location.href='/delete/todo/<%= todos._id %>'">X</Button>
+            </li>
+            <% }) %>
+        </ul> 
+
+        <script src="todoscript.js"></script>
+    </div>
+</body>
+
+</html>
