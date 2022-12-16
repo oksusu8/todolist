@@ -13,3 +13,9 @@
 * CI: continuous integration related
 * BUILD: changes that affect the build system or external dependencies
 * REVERT: reverts a previous commit 
+* DESIGN: changing user interface design
+
+## 프로젝트 참여자
+| 손정후 | 이예린 |
+| --- | --- |
+| [@jhson929](https://github.com/jhson929) | [@oksusu8](https://github.com/oksusu8) |
